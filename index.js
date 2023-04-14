@@ -116,7 +116,7 @@ async function run() {
 
         app.put('/users/admin/:id', async (req, res) => {
             const id = req.params.id;
-            const filter = { _id: ObjectId(id) }
+            const filter = { _id: new ObjectId(id) }
             const options = { upsert: true };
             const updatedDoc = {
                 $set: {
